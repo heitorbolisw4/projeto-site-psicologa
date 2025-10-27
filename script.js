@@ -19,8 +19,8 @@ document.querySelectorAll('.nav-link').forEach(link => {
 class BookCarousel {
     constructor() {
         this.track = document.getElementById('carousel-track');
-        this.prevBtn = document.getElementById('prev-btn');
-        this.nextBtn = document.getElementById('next-btn');
+        this.prevBtn = document.getElementById('carousel-prev');
+        this.nextBtn = document.getElementById('carousel-next');
         this.dotsContainer = document.getElementById('carousel-dots');
         
         this.currentIndex = 0;
@@ -218,29 +218,31 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Formulário de contato
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Simular envio do formulário
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    
-    submitBtn.textContent = 'Enviando...';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-        submitBtn.textContent = 'Mensagem Enviada!';
-        submitBtn.style.background = '#27ae60';
+// Formulário de contato tradicional (fallback)
+const legacyContactForm = document.querySelector('.contact-form');
+if (legacyContactForm) {
+    legacyContactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Enviando...';
+        submitBtn.disabled = true;
         
         setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            submitBtn.style.background = '';
-            this.reset();
-        }, 2000);
-    }, 1500);
-});
+            submitBtn.textContent = 'Mensagem Enviada!';
+            submitBtn.style.background = '#27ae60';
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+                this.reset();
+            }, 2000);
+        }, 1500);
+    });
+}
 
 // Typeform Logic
 class TypeformHandler {
@@ -251,8 +253,8 @@ class TypeformHandler {
         
         this.form = document.getElementById('typeform');
         this.progressBar = document.getElementById('progress-bar');
-        this.prevBtn = document.getElementById('prev-btn');
-        this.nextBtn = document.getElementById('next-btn');
+        this.prevBtn = document.getElementById('form-prev');
+        this.nextBtn = document.getElementById('form-next');
         
         this.init();
     }
@@ -295,7 +297,9 @@ class TypeformHandler {
                 // Adiciona seleção atual
                 btn.classList.add('selected');
                 // Define valor no input hidden
-                document.querySelector('input[name="assunto"]').value = btn.dataset.value;
+                const assuntoInput = document.querySelector('input[name="assunto"]');
+                assuntoInput.value = btn.dataset.value;
+                this.answers.assunto = btn.dataset.value;
                 // Avança automaticamente após 1 segundo
                 setTimeout(() => this.nextQuestion(), 1000);
             });
@@ -310,6 +314,8 @@ class TypeformHandler {
     }
     
     nextQuestion() {
+        if (this.nextBtn.disabled) return;
+
         if (!this.validateCurrentQuestion()) return;
         
         if (this.currentQuestion < this.totalQuestions) {
@@ -417,29 +423,47 @@ class TypeformHandler {
         this.hideQuestion(this.currentQuestion);
         this.showQuestion('success');
         this.progressBar.style.width = '100%';
+        this.prevBtn.disabled = true;
+        this.nextBtn.disabled = true;
+        this.nextBtn.classList.remove('active');
+        this.nextBtn.innerHTML = '<i class="fas fa-arrow-down"></i>';
         
         // Aqui você pode adicionar a lógica real de envio
         console.log('Dados do formulário:', this.answers);
     }
+
+    reset() {
+        this.hideQuestion(this.currentQuestion);
+        this.currentQuestion = 1;
+        this.answers = {};
+        this.form.reset();
+        this.progressBar.style.width = `${(1 / this.totalQuestions) * 100}%`;
+        document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+        this.hideQuestion('success');
+        this.showQuestion(this.currentQuestion);
+        this.prevBtn.disabled = true;
+        this.nextBtn.disabled = false;
+        this.updateNavigation();
+        this.updateProgress();
+        this.focusCurrentInput();
+    }
 }
 
-// Função para resetar o formulário
-function resetForm() {
-    const typeform = new TypeformHandler();
-    
-    // Reset visual
-    document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
-    document.querySelector('[data-question="1"]').classList.add('active');
-    
-    // Reset form
-    document.getElementById('typeform').reset();
-    document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
-}
+let typeformHandler;
 
 // Inicializar Typeform quando a página carregar
 document.addEventListener('DOMContentLoaded', () => {
-    new TypeformHandler();
+    if (document.getElementById('typeform')) {
+        typeformHandler = new TypeformHandler();
+    }
 });
+
+// Função para resetar o formulário (botão da tela de sucesso)
+function handleFormReset() {
+    if (typeformHandler) {
+        typeformHandler.reset();
+    }
+}
 
 // Contador animado para estatísticas
 function animateCounters() {
@@ -509,4 +533,3 @@ document.addEventListener('DOMContentLoaded', () => {
     
     images.forEach(img => imageObserver.observe(img));
 });
-

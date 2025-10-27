@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dra. Ana Beatriz - Psicóloga e Escritora</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -13,7 +12,7 @@
     <header class="header">
         <nav class="nav">
             <div class="nav-brand">
-                <img src="images/icon-psicologia.png" alt="Logo" class="logo">
+                <img src="images/Logo.png" alt="Logo" class="logo">
                 <span class="brand-text">Dra. Ana Beatriz</span>
             </div>
             <div class="nav-menu" id="nav-menu">
@@ -47,46 +46,49 @@
                     <a href="#contato" class="btn btn-primary">Agendar Consulta</a>
                     <a href="#livros" class="btn btn-secondary">Ver Livros</a>
                 </div>
-                <div class="hero-quote">
-                    <p>"Sou aprendiz da vida<br>Sou aprendiz da mente."</p>
-                    <span>- Dra. Ana Beatriz Barbosa Silva</span>
-                </div>
             </div>
             <div class="hero-image">
-                <div class="image-placeholder">
-                    <p>Foto da Dra. Ana Beatriz<br>(Aguardando upload)</p>
+                <div class="image-hero">
+                    <img src="images/BANNER-PRINCIPAL-.png" alt="Foto-Dra Ana Beatriz">
                 </div>
             </div>
         </div>
     </section>
+    <section class="quote">
+            <div class="hero-quote">
+                <p>"Sou aprendiz da vida<br>Sou aprendiz da mente."</p>
+                <span>- Dra. Ana Beatriz Barbosa Silva</span>
+            </div>
+
+    </section>    
 
     <!-- Estatísticas -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item">
-                    <h3 class="stat-number">3M</h3>
-                    <p class="stat-label">Seguidores no Instagram</p>
+                <div class="stat-item stat-instagram">
+                    <h3 class="stat-number">6.4M</h3>
+                    <p class="stat-label">Seguidores no <span>Instagram.</span></p>
                 </div>
-                <div class="stat-item">
-                    <h3 class="stat-number">2.5M</h3>
-                    <p class="stat-label">Livros Vendidos</p>
+                <div class="stat-item stat-youtube">
+                    <h3 class="stat-number">4.39M</h3>
+                    <p class="stat-label">Inscritos no <span>YouTube.</span></p>
                 </div>
-                <div class="stat-item">
-                    <h3 class="stat-number">0.9M</h3>
-                    <p class="stat-label">Seguidores no TikTok</p>
+                <div class="stat-item stat-tiktok">
+                    <h3 class="stat-number">1.3M</h3>
+                    <p class="stat-label">Seguidores no <span>TikTok.</span></p>
                 </div>
-                <div class="stat-item">
-                    <h3 class="stat-number">0.2M</h3>
-                    <p class="stat-label">Seguidores no Facebook</p>
+                <div class="stat-item stat-facebook">
+                    <h3 class="stat-number">1.2M</h3>
+                    <p class="stat-label">Seguidores no <span>Facebook.</span></p>
                 </div>
-                <div class="stat-item">
-                    <h3 class="stat-number">2K</h3>
-                    <p class="stat-label">Vídeos no YouTube</p>
+                <div class="stat-item stat-twitter">
+                    <h3 class="stat-number">48K</h3>
+                    <p class="stat-label">Inscritos no <span>Twitter.</span></p>
                 </div>
-                <div class="stat-item">
-                    <h3 class="stat-number">+30</h3>
-                    <p class="stat-label">Anos de Experiência</p>
+                <div class="stat-item stat-students">
+                    <h3 class="stat-number">+50k</h3>
+                    <p class="stat-label">Alunos <span>ativos.</span></p>
                 </div>
             </div>
         </div>
@@ -95,27 +97,26 @@
     <!-- Sobre -->
     <section id="sobre" class="about">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">Biografia</h2>
-                    <p class="about-description">
-                        Médica psiquiatra formada pela Universidade Federal do Rio de Janeiro (UFRJ), 
-                        com pós-graduação em Psiquiatria pela Santa Casa de Misericórdia do Rio de Janeiro.
-                    </p>
-                    <p class="about-description">
-                        Autora de diversos livros sobre comportamento humano, neurociência e saúde mental, 
-                        com mais de 2,5 milhões de exemplares vendidos. Palestrante reconhecida nacionalmente 
-                        e internacionalmente.
-                    </p>
-                    <a href="#contato" class="btn btn-primary">Saiba Mais</a>
-                </div>
-                <div class="about-images">
-                    <div class="image-grid">
-                        <div class="about-image-placeholder">Foto 1</div>
-                        <div class="about-image-placeholder">Foto 2</div>
-                        <div class="about-image-placeholder">Foto 3</div>
+            <div class="about-grid">
+                <figure class="about-card about-card--left about-card--photo">
+                    <img src="images/BIOGRAFIA-01.png" alt="Dra. Ana Beatriz segurando livros">
+                </figure>
+
+                <div class="about-card about-card--center">
+                    <div class="about-card__content">
+                        <h2 class="about-title">Biografia</h2>
+                        <p class="about-quote">"A gente só transborda o que tem dentro"</p>
+                        <a href="#contato" class="btn btn-tertiary">Ver biografia</a>
                     </div>
                 </div>
+
+                <figure class="about-card about-card--right about-card--photo">
+                    <img src="images/BIOGRAFIA-02t.png" alt="Retrato em preto e branco da Dra. Ana Beatriz">
+                </figure>
+
+                <figure class="about-card about-card--bottom about-card--photo">
+                    <img src="images/BIOGRAFIA-03-1.png" alt="Dra. Ana Beatriz sorrindo com livros">
+                </figure>
             </div>
         </div>
     </section>
@@ -174,35 +175,35 @@
                     <div class="carousel-track" id="carousel-track">
                         <div class="book-card">
                             <div class="book-cover">
-                                <div class="book-placeholder">Mentes Inquietas</div>
+                                <div class="book-placeholder"><img src="images/livros/MentesInquietas/mentes-inquietas--208x300.png" alt="Livro-Mentes-Inquietas"></div>
                             </div>
                             <h3 class="book-title">Mentes Inquietas</h3>
                             <p class="book-description">TDAH: Desatenção, Hiperatividade e Impulsividade</p>
                         </div>
                         <div class="book-card">
                             <div class="book-cover">
-                                <div class="book-placeholder">Mentes que Amam Demais</div>
+                                <div class="book-placeholder"><img src="images/livros/MentesQueAmam/mentes-que-amam-demais-208x300.png" alt="Livro-Mentes-Que-Amam-demais"></div>
                             </div>
                             <h3 class="book-title">Mentes que Amam Demais</h3>
                             <p class="book-description">Dependência Emocional e Relacionamentos</p>
                         </div>
                         <div class="book-card">
                             <div class="book-cover">
-                                <div class="book-placeholder">Felicidade</div>
+                                <div class="book-placeholder"><img src="images/livros/FelicidadeCienciaPratica/LIVRO-FELICIDADE-HOME--208x300.png" alt="Livro-Felicidade"></div>
                             </div>
                             <h3 class="book-title">Felicidade</h3>
                             <p class="book-description">Psicologia Positiva e Bem-estar</p>
                         </div>
                         <div class="book-card">
                             <div class="book-cover">
-                                <div class="book-placeholder">Mentes Perigosas</div>
+                                <div class="book-placeholder"><img src="images/livros/MentesPerigosas/mentes-perigosas-208x300.png" alt="Livro-Mentes-Perigosas"></div>
                             </div>
                             <h3 class="book-title">Mentes Perigosas</h3>
                             <p class="book-description">O Psicopata Mora ao Lado</p>
                         </div>
                         <div class="book-card">
                             <div class="book-cover">
-                                <div class="book-placeholder">Mentes Depressivas</div>
+                                <div class="book-placeholder"><img src="images/livros/MentesDepressivas/mentes-depressivas--208x300.png" alt=""></div>
                             </div>
                             <h3 class="book-title">Mentes Depressivas</h3>
                             <p class="book-description">As Três Dimensões da Doença do Século</p>
@@ -210,10 +211,10 @@
                     </div>
                 </div>
                 <div class="carousel-controls">
-                    <button class="carousel-btn prev" id="prev-btn">
+                    <button class="carousel-btn prev" id="carousel-prev">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <button class="carousel-btn next" id="next-btn">
+                    <button class="carousel-btn next" id="carousel-next">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
@@ -235,7 +236,7 @@
                         <p>"Os livros da Dra. Ana Beatriz mudaram minha perspectiva sobre saúde mental. Recomendo a todos!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar"></div>
+                        <div class="author-avatar"><img src="images/psico 3.png" alt=""></div>
                         <div class="author-info">
                             <h4>Maria Silva</h4>
                             <span>Leitora</span>
@@ -247,7 +248,7 @@
                         <p>"Profissional excepcional. Suas palestras são transformadoras e inspiradoras."</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar"></div>
+                        <div class="author-avatar"><img src="images/psico 1.png" alt=""></div>
                         <div class="author-info">
                             <h4>João Santos</h4>
                             <span>Empresário</span>
@@ -259,7 +260,7 @@
                         <p>"Conhecimento profundo e abordagem humanizada. Recomendo seus trabalhos."</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar"></div>
+                        <div class="author-avatar"><img src="images/psico 2.png" alt=""></div>
                         <div class="author-info">
                             <h4>Ana Costa</h4>
                             <span>Psicóloga</span>
@@ -277,7 +278,7 @@
             <div class="blog-grid">
                 <article class="blog-card">
                     <div class="blog-image">
-                        <img src="images/blog.png" alt="Artigo sobre ansiedade">
+                        <img src="images/blog1.jpg" alt="Artigo sobre ansiedade">
                     </div>
                     <div class="blog-content">
                         <span class="blog-category">Ansiedade</span>
@@ -291,7 +292,7 @@
                 </article>
                 <article class="blog-card">
                     <div class="blog-image">
-                        <img src="images/terapia.webp" alt="Artigo sobre relacionamentos">
+                        <img src="images/blog2.jpg" alt="Artigo sobre relacionamentos">
                     </div>
                     <div class="blog-content">
                         <span class="blog-category">Relacionamentos</span>
@@ -305,7 +306,7 @@
                 </article>
                 <article class="blog-card">
                     <div class="blog-image">
-                        <img src="images/depoimentos.webp" alt="Artigo sobre TDAH">
+                        <img src="images/blog3.jpg" alt="Artigo sobre TDAH">
                     </div>
                     <div class="blog-content">
                         <span class="blog-category">TDAH</span>
@@ -422,16 +423,16 @@
                                 <div class="success-icon">✨</div>
                                 <h3 class="question-title">Obrigada!</h3>
                                 <p class="success-message">Sua mensagem foi enviada com sucesso. Entrarei em contato em breve!</p>
-                                <button type="button" class="btn btn-primary" onclick="resetForm()">Enviar Nova Mensagem</button>
+                                <button type="button" class="btn btn-primary" onclick="handleFormReset()">Enviar Nova Mensagem</button>
                             </div>
                         </div>
 
                         <!-- Navegação -->
                         <div class="typeform-navigation">
-                            <button type="button" class="nav-btn prev-btn" id="prev-btn" disabled>
+                            <button type="button" class="nav-btn prev-btn" id="form-prev" disabled>
                                 <i class="fas fa-arrow-up"></i>
                             </button>
-                            <button type="button" class="nav-btn next-btn" id="next-btn">
+                            <button type="button" class="nav-btn next-btn" id="form-next">
                                 <i class="fas fa-arrow-down"></i>
                             </button>
                         </div>
@@ -470,4 +471,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
